@@ -6,36 +6,38 @@ angular
 
   $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
+  //Abstract State
+  .state('tab', {
+        url: '/tab',
+        abstract: true,
+        templateUrl: 'templates/tabs.html'
   })
 
-  // Each tab has its own nav history stack:
+  //History Stacks
 
+//Add Tab State
   .state('tab.add', {
-    url: '/add',
-    views: {
-      'tab-add': {
-        templateUrl: 'templates/tab-add.html',
-        controller: 'AddCtrl'
-      }
-    }
+        url: '/add',
+        views: {
+          'tab-add': {
+            templateUrl: 'templates/tab-add.html',
+            controller: 'AddCtrl'
+            }
+        }
   })
 
+  //Upcoming Tab State
   .state('tab.upcoming', {
-      url: '/upcoming',
-      views: {
-        'tab-upcoming': {
-          templateUrl: 'templates/tab-upcoming.html',
-          controller: 'UpcomingCtrl'
+        url: '/upcoming',
+        views: {
+          'tab-upcoming': {
+            templateUrl: 'templates/tab-upcoming.html',
+            controller: 'UpcomingCtrl'
+            }
         }
-      }
-    });
+  });
 
-  // if none of the above states are matched, use this as the fallback
+  //Default Tab
   $urlRouterProvider.otherwise('/tab/upcoming');
 
 });

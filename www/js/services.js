@@ -9,15 +9,17 @@ angular.module('starter.services', [])
     ]
   };
   
+//Add Task function - allows user to create a new task & enter title and details, also logs time and date when task was created
   function addTask(title, details) {
     data.tasks.push({title: title, details: details, added: new Date()});
   }
   
+//Remove function - allows user to delete all tasks at once
   function removeAll(){
     data.tasks.splice(0, data.tasks.length);
   }
      
-    
+
   return {
     data: data
     , addTask: addTask

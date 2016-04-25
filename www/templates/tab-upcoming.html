@@ -1,19 +1,37 @@
 <ion-view view-title="Upcoming Tasks">
   <ion-content>
     <ion-list>
+        
       <ion-item class = "item-remove-animate item-icon-right" ng-repeat="task in tasks" ng-click = "show">
         <div class="list">
+            
+            <!-- Display Title and Details -->
             <p class = "padding" style="font-size:125%;"><b>{{task.title}}</b></p>
             <p class = "padding" style="font-size:105%;"><i>{{task.details}}</i></p>
+            
+            <!-- Display Time/Date created -->
             <p class = "padding-left"><i>{{task.added | date: 'yyyy-MM-dd HH:mm'}}</i></p>
+            
         </div>
           
+        <!-- Swipe Completed button -->
         <ion-option-button class="button button-balanced" ng-click="complete(task)">Completed!</ion-option-button>
         
-        </ion-item>
+      </ion-item>
     </ion-list>
-              <button class="delButton button button-full icon ion-trash-b "  ng-click="removeAll()"> Delete All</button>
+      
+    <!-- Delete All -->    
+    <button class="delButton button button-full icon ion-trash-b "  ng-click="removeAll()"> Delete All</button>
 
   </ion-content>
 </ion-view>
  
+<!--
+
+Buttons sourced from
+http://ionicframework.com/docs/components/#buttons
+
+Date function sourced from
+https://github.com/mobile-applications-development/solution-factory/blob/master/www/templates/tab-tasks.html
+
+-->
