@@ -1,17 +1,19 @@
 <ion-view view-title="Upcoming Tasks">
   <ion-content>
     <ion-list>
-        
       <ion-item class = "item-remove-animate item-icon-right" ng-repeat="task in tasks" ng-click = "show">
         <div class="list">
             <p class = "padding" style="font-size:125%;"><b>{{task.title}}</b></p>
-            <p class = "padding-left"><i>{{task.details}}</i></p>
+            <p class = "padding" style="font-size:105%;"><i>{{task.details}}</i></p>
+            <p class = "padding-left"><i>{{task.added | date: 'yyyy-MM-dd HH:mm'}}</i></p>
         </div>
           
         <ion-option-button class="button button-balanced" ng-click="complete(task)">Completed!</ion-option-button>
-          
+        
         </ion-item>
     </ion-list>
+              <button class="delButton button button-full icon ion-trash-b "  ng-click="removeAll()"> Delete All</button>
+
   </ion-content>
 </ion-view>
  

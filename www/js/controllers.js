@@ -20,6 +20,10 @@ angular.module('starter.controllers', [])
          $scope.complete = function(i){
             Task.complete(i);
         };
+             
+    $scope.removeAll = function(){
+    Task.removeAll();
+    };
     
     $scope.tasks = Task.data.tasks;
     $scope.show;
