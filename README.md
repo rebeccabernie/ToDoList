@@ -10,5 +10,6 @@ Functions:
 - Mark Task Complete: Swipe to the left on a task, tap "Complete!" - *warning* this deletes the task
 - Delete All Tasks: "Delete All" button
 
+
 - No save function
 - Haven't tested compiling for android
